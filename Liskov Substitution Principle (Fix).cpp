@@ -37,3 +37,10 @@ int main() {
     processShape(square);
     return 0;
 }
+
+/*
+We introduce a Shape interface with a pure virtual method area(), which both Rectangle and Square implement.
+Instead of trying to fit Square into an inheritance hierarchy with Rectangle, we treat Rectangle and Square as unrelated shapes, each implementing the Shape interface.
+We modify the processShape() function to accept a Shape reference, allowing it to work with both Rectangle and Square objects interchangeably.
+
+*/
