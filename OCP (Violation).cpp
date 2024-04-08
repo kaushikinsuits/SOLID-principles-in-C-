@@ -28,14 +28,8 @@ public:
     }
 };
 
-// New requirement: Add a Triangle shape
-class Shape { // Violation: Modifying the existing class
-public:
-    virtual double area() const = 0;
-};
-
 // Derived class representing a triangle
-class Triangle : public Shape { // Violation: Modifying the existing class
+class Triangle : public Shape {
 private:
     double base;
     double height;
@@ -49,11 +43,11 @@ public:
 int main() {
     Circle circle(5.0);
     Square square(4.0);
-    Triangle triangle(3.0, 4.0); // New shape added
+    Triangle triangle(3.0, 4.0);
 
     std::cout << "Area of circle: " << circle.area() << std::endl;
     std::cout << "Area of square: " << square.area() << std::endl;
-    std::cout << "Area of triangle: " << triangle.area() << std::endl; // New shape usage
+    std::cout << "Area of triangle: " << triangle.area() << std::endl;
 
     return 0;
 }
