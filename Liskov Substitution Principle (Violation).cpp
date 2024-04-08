@@ -16,13 +16,14 @@ public:
 class Square : public Rectangle {
 public:
     Square(int size) : Rectangle(size, size) {}
-    void setWidth(int w) override {
+    void setWidth(int w) {
         width = height = w;
     }
-    void setHeight(int h) override {
+    void setHeight(int h) {
         width = height = h;
     }
 };
+
 
 void processRectangle(Rectangle& rect) {
     int width = rect.getWidth();
