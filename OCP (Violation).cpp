@@ -59,9 +59,9 @@ int main() {
 }
 
 /*
-In this code:
 Initially, the Shape, Circle, and Square classes are defined as before.
-Later, we need to add a new shape, Triangle, so we modify the existing Shape
-class to remove its hierarchy and add the Triangle class directly. 
-This violates the Open/Closed Principle because it requires modifying the existing class.
+Later, we need to add a new shape, Triangle, so we modify the existing 
+Shape class to remove its hierarchy and add the Triangle class directly.
+This violates the Open/Closed Principle because it requires modifying the
+existing class.
 */
