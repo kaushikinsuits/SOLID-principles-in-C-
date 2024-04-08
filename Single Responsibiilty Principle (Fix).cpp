@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-class FileManager {
+class FileReader {
 public:
     void readFile(const std::string& filename) {
         std::ifstream file(filename);
@@ -11,7 +11,10 @@ public:
             std::cout << "Read line: " << line << std::endl;
         }
     }
+};
 
+class FileWriter {
+public:
     void writeFile(const std::string& filename, const std::string& data) {
         std::ofstream file(filename);
         file << data;
@@ -20,14 +23,22 @@ public:
 };
 
 int main() {
-    FileManager fileManager;
-    fileManager.readFile("input.txt");
-    fileManager.writeFile("output.txt", "Hello, World!");
+    FileReader fileReader;
+    fileReader.readFile("input.txt");
+
+    FileWriter fileWriter;
+    fileWriter.writeFile("output.txt", "Hello, World!");
+
     return 0;
 }
 
-/*
-In this code, the FileManager class handles both reading from and writing to a
-file. However, this violates SRP because the class is responsible for two different
-things: file I/O operations and managing file contents.
+
+/*In this  code, the FileReader class is responsible for reading from a file, while the FileWriter
+class is responsible for writing to a file. Each class now adheres to SRP by having only one reason
+to change - either reading from or writing to a file.
 */
+
+
+
+
+
